@@ -1,0 +1,56 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form" style="background-image: url('../../../../assets/images/bg1.jpg'); background-size: cover;">
+      <div class="card my-5">
+        <div class="card-body">
+        
+
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <div class="auth-header">
+                <h2 class="text-secondary mt-5"><b>Authentification</b></h2>
+                <p class="fs-4 mt-2"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Affichage message d'erreur -->
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Formulaire -->
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-floating mb-3">
+               <label for="email">Email :</label><input formControlName="email" type="email" class="form-control" id="email" />
+             
+              <div *ngIf="email?.touched && email?.invalid" class="text-danger mt-1">
+                <small *ngIf="email?.errors?.['required']">Email est requis</small>
+                <small *ngIf="email?.errors?.['email']">Email invalide</small>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="password">Mot de passe :</label><input formControlName="password" type="password" class="form-control" id="password" />
+              
+              <div *ngIf="password?.touched && password?.invalid" class="text-danger mt-1">
+                <small *ngIf="password?.errors?.['required']">Mot de passe requis</small>
+                <small *ngIf="password?.errors?.['minlength']">Mot de passe trop court</small>
+              </div>
+            </div>
+
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-secondary" [disabled]="form.invalid">Se Connecter</button>
+            </div>
+          </form>
+
+          <hr />
+
+          <h5 class="d-flex justify-content-center">
+  <a [routerLink]="['/register']">Vous n'avez pas de compte ?</a>
+</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

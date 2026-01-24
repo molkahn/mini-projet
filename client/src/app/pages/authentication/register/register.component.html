@@ -1,0 +1,86 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form" 
+    style="background-image: url('../../../../assets/images/bg1.jpg') !important; background-size: cover;">
+      <div class="card mt-5" >
+        <div class="card-body" >
+        
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <div class="auth-header">
+                <h2 class="text-secondary mt-5"><b>Inscription</b></h2>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+
+          <div *ngIf="successMessage" class="alert alert-success">
+            {{ successMessage }}
+          </div>
+
+          <form [formGroup]="form" (ngSubmit)="submit()">
+          
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <label for="nom">Nom :</label><input type="text" class="form-control" id="nom" formControlName="nom" />
+                  
+                  <div class="text-danger" *ngIf="f['nom'].touched && f['nom'].errors">
+                    <small *ngIf="f['nom'].errors['required']">Nom is required.</small>
+                    <small *ngIf="f['nom'].errors['minlength']">Nom must be at least 2 characters.</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <label for="prenom">Prénom :</label><input type="text" class="form-control" id="prenom" formControlName="prenom" />
+                  
+                  <div class="text-danger" *ngIf="f['prenom'].touched && f['prenom'].errors">
+                    <small *ngIf="f['prenom'].errors['required']">Prenom is required.</small>
+                    <small *ngIf="f['prenom'].errors['minlength']">Prenom must be at least 2 characters.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="email">Email :</label><input type="email" class="form-control" id="email" formControlName="email" />
+              
+              <div class="text-danger" *ngIf="f['email'].touched && f['email'].errors">
+                <small *ngIf="f['email'].errors['required']">Email is required.</small>
+                <small *ngIf="f['email'].errors['email']">Email is invalid.</small>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+             <label for="password">Mot de passe :</label> <input type="password" class="form-control" id="password" formControlName="password" />
+              
+              <div class="text-danger" *ngIf="f['password'].touched && f['password'].errors">
+                <small *ngIf="f['password'].errors['required']">Mot de passe is required.</small>
+                <small *ngIf="f['password'].errors['minlength']">
+                  Mot de passe must be at least {{ f['password'].errors['minlength'].requiredLength }} characters.
+                </small>
+              </div>
+            </div>
+
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-secondary p-2">S'inscrire</button>
+            </div>
+          </form>
+
+          <hr />
+        <!-- juste après le bouton S'inscrire -->
+<div class="text-center mt-3">
+  <a routerLink="/login" class="already-account-link">J'ai déjà un compte ?</a>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

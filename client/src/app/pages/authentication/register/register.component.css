@@ -1,0 +1,168 @@
+/* FULL PAGE CENTER */
+.auth-main {
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #800773b5, #8e44ad);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* AUTH FORM - GLASS EFFECT */
+.auth-form {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 23.5px 60px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.auth-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* CARD RESET */
+.card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* CARD BODY */
+.card-body {
+  width: 380px;
+  text-align: center;
+  color: white;
+}
+
+/* TITLE */
+.auth-header h2 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* FORM */
+form {
+  text-align: left;
+}
+
+/* INPUTS FORM-FLOATING */
+.form-floating {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-floating input.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 30px;
+  color: rgba(234, 226, 226, 0.9);
+  padding: 12px 15px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* PLACEHOLDER STYLE */
+.form-floating label {
+  left: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.already-account-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.already-account-link:hover {
+  text-decoration: underline;
+  color: #ffd1ff;
+}
+
+.form-floating input.form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  color: white;
+  border: 1px solid #fff;
+}
+
+.form-floating input.form-control:focus + label,
+.form-floating input.form-control:not(:placeholder-shown) + label {
+  color: #fff;
+  transform: translateY(-25px);
+  font-size: 12px;
+}
+
+/* BUTTON */
+.btn-secondary {
+  width: 100%;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #d4145a, #9114ff);
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* HR */
+hr {
+  border-color: rgba(255, 255, 255, 0.3);
+  margin: 30px 0;
+}
+
+/* REGISTER LINK */
+h5 {
+  text-align: center;
+}
+
+h5 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+h5 a:hover {
+  text-decoration: underline;
+  color: #ffd1ff;
+}
+
+/* ERROR */
+.alert-danger {
+  background: rgba(255, 0, 0, 0.15);
+  border: none;
+  color: #ffdede;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* SUCCESS */
+.alert-success {
+  background: rgba(0, 255, 0, 0.15);
+  border: none;
+  color: #d4ffd4;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* SPACING POUR COLS */
+.row > .col-md-6 {
+  margin-bottom: 15px;
+}
